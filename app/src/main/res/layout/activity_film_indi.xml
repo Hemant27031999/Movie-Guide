@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:background="#000"
+        tools:context=".film_indi">
+
+        <RelativeLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="400dp">
+
+                <ImageView
+                    android:paddingHorizontal="40dp"
+                    android:scaleType="fitXY"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/mainimg"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="0dp"
+                    android:src="@drawable/capame"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_below="@+id/main"
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="Captain America"
+                android:textColor="#fff"
+                android:textSize="40dp"
+                android:textStyle="normal"
+                android:fontFamily="@font/fruktur" />
+
+            <TextView
+                android:layout_below="@+id/title"
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="2018-03-17"
+                android:textColor="#A8A8A8"
+                android:textSize="20dp"
+                android:textStyle="normal"
+                android:fontFamily="@font/aladin" />
+
+            <TextView
+                android:layout_below="@+id/date"
+                android:id="@+id/rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="8.7/10"
+                android:textColor="#A0A0A0"
+                android:textSize="20dp"
+                android:textStyle="normal"
+                android:fontFamily="@font/aladin" />
+
+            <TextView
+                android:layout_below="@+id/rate"
+                android:id="@+id/sum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="Summary"
+                android:textColor="#fff"
+                android:textSize="30dp"
+                android:textStyle="normal"
+                android:fontFamily="@font/fruktur" />
+
+            <TextView
+                android:layout_below="@+id/sum"
+                android:id="@+id/descp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:text="News producer, Tim O'Hara gets himself fired for unwillingly compromising his bosses' daughter during a live transmission. A little later, he witnesses the crashing of a small Martian spacecraft, realizing his one-time chance of delivering a story that will rock the earth. Since Tim took the original but scaled-down spaceship with him, the Martian follows him to retrieve it."
+                android:textColor="#919191"
+                android:textSize="15dp"
+                android:textStyle="normal"
+                android:fontFamily="@font/capriola" />
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/bn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/descp"
+                android:text=" Play Official Trailer" />
+
+            <com.google.android.youtube.player.YouTubePlayerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bn"
+                android:id="@+id/youtube_player_view"
+                android:background="@drawable/trailer"
+                android:layout_centerHorizontal="true">
+
+            </com.google.android.youtube.player.YouTubePlayerView>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
