@@ -24,10 +24,13 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements GridAdapter.OnItemClickListener, View.OnClickListener {
     private String API_Key = "0070cb44f64f0c3a551a44955f507e96";
+    private String API_Key1 = "ddcb1a9cb8ef80caf814ebb1d3ab511c";
     public TextView textView1;
+    public TextView textView2;
     public ImageView imageview1;
     private EditText search;
     private List<Results> results;
+    private List<Results> results1;
     private List<Results> searchedresults;
     public static final String mTitle="Title";
     public static final String mDate="Date";
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements GridAdapter.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView1 =(TextView)findViewById(R.id.maintext);
+        textView2 =(TextView)findViewById(R.id.maintext1);
         imageview1 =(ImageView) findViewById(R.id.mainimg);
         search=(EditText) findViewById(R.id.searchbox);
         go=(ImageView) findViewById(R.id.go);
@@ -72,10 +76,39 @@ public class MainActivity extends AppCompatActivity implements GridAdapter.OnIte
         });
 
         RecyclerView rv = findViewById(R.id.movie);
-        rv.setLayoutManager(new GridLayoutManager(this, 3));
+        rv.setLayoutManager(new GridLayoutManager(this, 2));
         GridAdapter iga = new GridAdapter(MainActivity.this, imageList, results);
         rv.setAdapter(iga);
         iga.setOnItemClickListener(MainActivity.this);
+
+
+//        final ArrayList<String> imageList1 = new ArrayList<>();
+//        textView2.setText("Working Well !!");
+//        ApiInterface service1 = ApiClient.getClient().create(ApiInterface.class);
+//        //language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&api_key=0070cb44f64f0c3a551a44955f507e96
+//        Call<Mainjson> call1 = service1.getMainJson("en-US", "release_date.desc",false, false,1 , API_Key1);
+//        call1.enqueue(new Callback<Mainjson>() {
+//            @Override
+//            public void onResponse(Call<Mainjson> call, Response<Mainjson> response) {
+//                results1 = Arrays.asList(response.body().getResults());
+//                for(Results myResults : results1) {
+//                    imageList1.add("http://image.tmdb.org/t/p/w185/" + myResults.getPoster_path());
+//                }
+//                String s=imageList.get(0);
+//                textView2.setText(s);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Mainjson> call, Throwable t) {
+//                Toast.makeText(getApplicationContext(),"Unable to retrieve data!",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//        RecyclerView rv1 = findViewById(R.id.released);
+//        rv.setLayoutManager(new GridLayoutManager(this, 2));
+//        GridAdapter iga1 = new GridAdapter(MainActivity.this, imageList1, results1);
+//        rv1.setAdapter(iga1);
+//        iga1.setOnItemClickListener(MainActivity.this);
 
         imageview1.setOnClickListener(new View.OnClickListener() {
             @Override
